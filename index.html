@@ -63,28 +63,22 @@
 	     <p><strong>💡TIPS:<strong> Harap gunakan <strong>Earphone</strong> dan naikkan <strong>Volume hingga 100%</strong>.</p>
 	</div>
 
-	<button onclick="nyalakanSuaraPrank()">klik saya</button>
+	<button onclick="pencetsini()">sini</button>
 
 	<br>
 
-	<iframe id="VideoPrank" width="560" height="315"
-	src="https://www.youtube.com/embed/at1vVMc4gBg?si=WZ2RjvMYU26ZLyoV&amp;start=2"
-	title="YouTube video player"
-	frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-	origin-when-cross-origin"
-	allowfullscreen>
-	</iframe>
-
+	<audio id="LaguPrank">
+		  <source src="suara.mp3" type="audio/mpeg">
+	
 	<h1 id="teksKetawa" style="display:none; color: red; font-size: 40px; margin-top 20px;">wkkwkkkwkwkkkwkkwkwk😹</h1>h1>
 
 	<script>
-	    function nyalakanSuaraPrank() {
-		document.getElementById("VideoPrank").style.display = "block";
+	    function pencetsini() {
+		document.getElementById("LaguPrank").play();
 		document.getElementById("teksKetawa").style.display = "block";
 			
 		}
-			setTimeout(function() {
-			}, 150);
-			
+		
     </script>
 </body>
 </html> 
