@@ -5,11 +5,10 @@
 
     <style>
 	body {
-	    background-color: #f0f8ff; /* Mengubah warna latar belakanng jadi biru muda */
-	    font-family: 'segoe UI', sans-serif; /* Mengubah model tulisan agar rapi */
-	    text-align: center; */ membuat semua tulisan berada di tengah layar */
+	    background-color: #f0f8ff; /* Mengubah warna latar belakang jadi biru muda */
+	    font-family: 'Segoe UI', sans-serif; /* Mengubah model tulisan agar rapi */
+	    text-align: center; /* membuat semua tulisan berada di tengah layar */
 	    padding: 50px;
-			
 	}
 
 	/* Gaya untuk kotak peringatan */
@@ -17,7 +16,7 @@
 	   background-color: #fff3cd;
 	   border: 2px dashed #ffc107;
 	   color: #856404;
-	   Padding: 15PX;
+	   padding: 15px;
  	   border-radius: 8px;
 	   max-width: 560px;
 	   margin: 0 auto 20px auto;
@@ -34,9 +33,9 @@
 	    background-color: #e74c3c; /* mengubah warna tombol jadi merah */
 	    color: white; /* mengubah warna tulisan di dalam tombol jadi putih */
 	    border: none; /* menghilangkan garis pinggir tombol yang kaku */
-	    padding: 12px 24px; /* membuat tombol  jadi lebih gemuk/besar */
+	    padding: 12px 24px; /* membuat tombol jadi lebih gemuk/besar */
 	    font-size: 16px;
-	    border-raadius: 8px; /* membuat sudut tombol jadi melengkung (aesthetic) */
+	    border-radius: 8px; /* membuat sudut tombol jadi melengkung (aesthetic) */
 	    cursor: pointer; /* membuat kursor mouse berubah jadi jari tangan saat menunjuk tombol */
 	    margin-bottom: 20px;
 	}
@@ -44,11 +43,6 @@
 	/* Efek interaktif: saat tombol ditunjuk mouse, warnanya berubah */
 	button:hover {
 	    background-color: #c0392b; /* merah yang agak tua */
-	}
-
-	#VideoPrank {
-	    display: none;
-	    margin-top: 20px;
 	}
     </style>
 
@@ -60,7 +54,7 @@
 
 	<div class="kotak-peringatan">
 	     <p><strong>⚠️ PERINGATAN SISTEM:</strong> Audio rekaman ini sangat kecil.</p>
-	     <p><strong>💡TIPS:<strong> Harap gunakan <strong>Earphone</strong> dan naikkan <strong>Volume hingga 100%</strong>.</p>
+	     <p><strong>💡TIPS:</strong> Harap gunakan <strong>Earphone</strong> dan naikkan <strong>Volume hingga 100%</strong>.</p>
 	</div>
 
 	<button onclick="pencetTombol()">sini</button>
@@ -71,31 +65,30 @@
 		  <source src="prank_op.mp3" type="audio/mpeg">
 	</audio>
 	
-	<h1 id="teksKetawa" style="display:none; color: red; font-size: 40px; margin-top: 20px;">wkkwkkkwkwkkkwkkwkwk😹</h1>
+	<h1 id="teksKetawa" style="display:none; color: red; font-size: 40px; margin-top: 20px;">wkkwkkkwkwkkkwkkwkwk 😹</h1>
 
-    <script>
-        function pencetTombol() {
-            var audio = document.getElementById("Prank_op.mp3");
-            
-            // Trik 1: Paksa muat ulang audio dari awal agar browser HP mendeteksi file
-            audio.load(); 
-            
-            // Trik 2: Atur volume ke paling maksimal (1.0 adalah 100%)
-            audio.volume = 1.0; 
-            
-            // Trik 3: Putar audio dengan penanganan perintah paksa (Promise)
-            audio.play().then(function() {
-                // Jika sukses berputar, tampilkan teks ketawa
-                document.getElementById("teksKetawa").style.display = "block";
-            }).catch(function(error) {
-                // Jika diblokir browser HP, jalankan paksa sekali lagi saat layar disentuh
-                console.log("Browser memblokir autoplay, mencoba memutar ulang...");
-                audio.play();
-                document.getElementById("teksKetawa").style.display = "block";
-            });
-        }
-    </script>
-			 
-</body>
-</html> 
+	<!-- BAGIAN BAWAH JAVASCRIPT YANG SUDAH DITAMBAHKAN KODE SAKTI -->
+	<script>
+	    function pencetTombol() {
+		var audio = document.getElementById("LaguPrank");
 		
+		// Trik 1: Paksa muat ulang audio dari awal agar browser HP mendeteksi file
+		audio.load();
+		
+		// Trik 2: Atur volume ke paling maksimal (1.0 adalah 100%)
+		audio.volume = 1.0;
+		
+		// Trik 3: Putar audio dengan penanganan perintah paksa (Promise)
+		audio.play().then(function() {
+		    // Jika sukses berputar, tampilkan teks ketawa
+		    document.getElementById("teksKetawa").style.display = "block";
+		}).catch(function(error) {
+		    // Jika diblokir oleh browser HP, jalankan paksa sekali lagi
+		    console.log("Autoplay diblokir browser, mencoba memutar ulang...");
+		    audio.play();
+		    document.getElementById("teksKetawa").style.display = "block";
+		});
+	    }
+    </script>
+</body>
+</html>
