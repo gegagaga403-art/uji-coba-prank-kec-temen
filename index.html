@@ -62,32 +62,17 @@
 	<br>
 
 	<audio id="LaguPrank">
-		  <source src="prank_op.mp3" type="audio/mpeg">
+		  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
 	</audio>
 	
 	<h1 id="teksKetawa" style="display:none; color: red; font-size: 40px; margin-top: 20px;">wkkwkkkwkwkkkwkkwkwk 😹</h1>
 
-	<!-- BAGIAN BAWAH JAVASCRIPT YANG SUDAH DITAMBAHKAN KODE SAKTI -->
 	<script>
 	    function pencetTombol() {
 		var audio = document.getElementById("LaguPrank");
-		
-		// Trik 1: Paksa muat ulang audio dari awal agar browser HP mendeteksi file
-		audio.load();
-		
-		// Trik 2: Atur volume ke paling maksimal (1.0 adalah 100%)
 		audio.volume = 1.0;
-		
-		// Trik 3: Putar audio dengan penanganan perintah paksa (Promise)
-		audio.play().then(function() {
-		    // Jika sukses berputar, tampilkan teks ketawa
-		    document.getElementById("teksKetawa").style.display = "block";
-		}).catch(function(error) {
-		    // Jika diblokir oleh browser HP, jalankan paksa sekali lagi
-		    console.log("Autoplay diblokir browser, mencoba memutar ulang...");
-		    audio.play();
-		    document.getElementById("teksKetawa").style.display = "block";
-		});
+		audio.play();
+		document.getElementById("teksKetawa").style.display = "block";
 	    }
     </script>
 </body>
